@@ -8,14 +8,14 @@ class HandleRequest(object):
         with tf.gfile.GFile(
                 image_uri, "rb") as f:
             self.r = rq.post(
-                "http://ec2-18-216-95-59.us-east-2.compute.amazonaws.com", 
+                "http://ec2-18-216-95-59.us-east-2.compute.amazonaws.com",
                 data=f.read())
         
     def caption(self):
         if self.r.status_code == 200:
             return self.r.json()["image_caption"]
         else:
-            return [[""]]
+            return [["", 0.0]]
 
 if __name__ == "__main__":
     import argparse
