@@ -23,11 +23,11 @@ if __name__ == "__main__":
     parser.add_argument(
         "--image_uri",
         type=str,
-        default="/home/ubuntu/im2txt/im2txt/data/coco/raw-data/val2014/COCO_val2014_000000224477.jpg")
+        default="/home/ubuntu/data/coco/raw-data/val2014/COCO_val2014_000000224477.jpg")
     parser.add_argument(
         "--server_url",
         type=str,
-        default="http://ec2-18-216-95-59.us-east-2.compute.amazonaws.com")
+        default="http://ec2-18-191-173-48.us-east-2.compute.amazonaws.com")
     args = parser.parse_args()
     r = HandleRequest(args.image_uri, args.server_url)
     print("Image Caption for %s:"%args.image_uri)
